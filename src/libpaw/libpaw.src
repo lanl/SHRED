@@ -1,0 +1,26 @@
+LIBPAW_SRC_FILES= \
+ libpaw.h \
+ m_libpaw_defs.F90 \
+ m_libpaw_mpi.F90 \
+ m_libpaw_tools.F90 \
+ m_libpaw_libxc.F90 \
+ m_paral_atom.F90 \
+ m_paw_numeric.F90 \
+ m_paw_sphharm.F90 \
+ m_paw_io.F90 \
+ m_pawang.F90 \
+ m_pawrad.F90 \
+ m_pawtab.F90 \
+ m_paw_an.F90 \
+ m_paw_ij.F90 \
+ m_pawfgrtab.F90 \
+ m_paw_finegrid.F90 \
+ m_pawcprj.F90 \
+ m_pawrhoij.F90 \
+ m_pawdij.F90 \
+ m_pawxc.F90 \
+ m_paw_atom.F90 \
+ m_paw_gaussfit.F90 \
+ m_pawxmlps.F90 \
+ m_pawpsp.F90 \
+ m_paw_init.F90 

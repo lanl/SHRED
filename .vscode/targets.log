@@ -1,0 +1,1104 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+
+# Make data base, printed on Thu Aug 25 19:24:11 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 26)
+FFTW_COMPILE_FLAGS = -I$(FFTW_DIR)include -I$(FFTW_DIR)lib
+# makefile (from `Makefile', line 41)
+linear_algebra = lapack
+# makefile (from `Makefile', line 22)
+MPI_INC_DIR = $(shell mpif90 --showme:incdirs)
+# makefile (from `Makefile', line 4)
+MODCMD = -J
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/alwhite/master/shred
+# makefile (from `Makefile', line 48)
+LINK = $(LINALG) $(MPI_LINK_FLAGS) $(XC_LINK_FLAGS) $(FFTW_LINK_FLAGS)
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 40)
+xc = libxc
+# makefile (from `Makefile', line 20)
+MPI_COMPILE_FLAGS = $(shell mpif90 --showme:compile)
+# makefile (from `Makefile', line 86)
+OBJTYPE = $(OBJDIR)/$(TYPDIR)/types.o $(OBJDIR)/$(TYPDIR)/parallel_type_$(parallel).o $(OBJDIR)/$(TYPDIR)/shared_type.o $(OBJDIR)/$(TYPDIR)/constants.o $(OBJDIR)/$(TYPDIR)/numerics.o $(OBJDIR)/$(TYPDIR)/odp_type_$(FFT).o $(OBJDIR)/$(TYPDIR)/element_type.o $(OBJDIR)/$(TYPDIR)/atom_type.o $(OBJDIR)/$(TYPDIR)/grids_type_$(FFT).o $(OBJDIR)/$(TYPDIR)/system_type.o $(OBJDIR)/$(TYPDIR)/xc_type_$(xc).o $(OBJDIR)/$(TYPDIR)/tf_type.o $(OBJDIR)/$(TYPDIR)/td_type.o $(OBJDIR)/$(TYPDIR)/ewald_type.o $(OBJDIR)/$(TYPDIR)/KG_type.o $(OBJDIR)/$(TYPDIR)/DOS_type.o $(OBJDIR)/$(TYPDIR)/tasks_type.o $(OBJDIR)/$(TYPDIR)/stochastic_type.o $(OBJDIR)/$(TYPDIR)/stopping_type.o $(OBJDIR)/$(TYPDIR)/simulation_type.o
+# makefile (from `Makefile', line 117)
+OBJSAO = $(OBJDIR)/$(SAODIR)/inputs.o $(OBJDIR)/$(SAODIR)/grids_$(FFT).o $(OBJDIR)/$(SAODIR)/odp_$(FFT).o
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 16)
+CALCDIR = calculations
+# makefile (from `Makefile', line 17)
+PAWDIR = libpaw
+# makefile (from `Makefile', line 131)
+OBJPHYS = $(OBJDIR)/$(PHYSDIR)/Ewald.o $(OBJDIR)/$(PHYSDIR)/Hartree.o $(OBJDIR)/$(PHYSDIR)/Kinetic.o $(OBJDIR)/$(PHYSDIR)/External_Field.o $(OBJDIR)/$(PHYSDIR)/XC.o $(OBJDIR)/$(PHYSDIR)/Density.o $(OBJDIR)/$(PHYSDIR)/HGH_Pseudopotentials.o $(OBJDIR)/$(PHYSDIR)/PAW_Pseudopotentials.o $(OBJDIR)/$(PHYSDIR)/Local_Ion.o $(OBJDIR)/$(PHYSDIR)/Non_Local_Ion.o $(OBJDIR)/$(PHYSDIR)/Apply_Hamiltonian.o $(OBJDIR)/$(PHYSDIR)/Non_Local_Ion_EnFoSt.o $(OBJDIR)/$(PHYSDIR)/Chebychev.o $(OBJDIR)/$(PHYSDIR)/Stochastic.o $(OBJDIR)/$(PHYSDIR)/Thermostat.o $(OBJDIR)/$(PHYSDIR)/Thomas_Fermi.o $(OBJDIR)/$(PHYSDIR)/Entropy.o $(OBJDIR)/$(PHYSDIR)/Chemical_Potential.o
+# makefile (from `Makefile', line 3)
+LINALG = -llapack -lblas
+# makefile (from `Makefile', line 36)
+LA_COMPILE_FLAGS = -I$(LA_DIR)include -I$(LA_DIR)lib -llapack -lblas
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# makefile (from `Makefile', line 14)
+TASKDIR = tasks
+# makefile (from `Makefile', line 122)
+OBJTASK = $(OBJDIR)/$(TASKDIR)/operations_3D.o $(OBJDIR)/$(TASKDIR)/Spherical_Harmonics.o $(OBJDIR)/$(TASKDIR)/field_gradient.o $(OBJDIR)/$(TASKDIR)/distribute_field.o $(OBJDIR)/$(TASKDIR)/FFT2Matrix.o $(OBJDIR)/$(TASKDIR)/Fourier.o $(OBJDIR)/$(TASKDIR)/read_in.o
+# environment
+VSCODE_CWD = /
+# makefile (from `Makefile', line 10)
+MAINDIR = main
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/TeX/texbin:/opt/X11/bin:/Library/Apple/usr/bin
+# makefile (from `Makefile', line 39)
+parallel = mpi
+# environment
+LaunchInstanceID = D402302B-A381-4A6C-9BAA-163D2D011469
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `Makefile', line 15)
+PHYSDIR = physics
+# makefile (from `Makefile', line 45)
+MOD_DIRECTORIES = $(MODDIR)/$(MAINDIR) $(MODDIR)/$(CALCDIR) $(MODDIR)/$(PHYSDIR) $(MODDIR)/$(TASKDIR) $(MODDIR)/$(SAODIR) $(MODDIR)/$(INTDIR) $(MODDIR)/$(TYPDIR) $(MODDIR)/$(PAWDIR)
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.EVpk0eqRHw/Listeners
+# makefile (from `Makefile', line 7)
+SRCDIR = src
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.PB0NAWyk2g/org.xquartz:0
+# environment
+PWD = /Users/alwhite/master/shred
+# makefile (from `Makefile', line 46)
+OBJ_DIRECTORIES = $(OBJDIR)/$(MAINDIR) $(OBJDIR)/$(CALCDIR) $(OBJDIR)/$(PHYSDIR) $(OBJDIR)/$(TASKDIR) $(OBJDIR)/$(SAODIR) $(OBJDIR)/$(INTDIR) $(OBJDIR)/$(TYPDIR) $(OBJDIR)/$(PAWDIR)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/alwhite
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/alwhite/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+# environment
+LOGNAME = alwhite
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# makefile (from `Makefile', line 32)
+XC_LINK_FLAGS = -L$(XC_DIR)lib -lxcf03 -lxc
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from `Makefile', line 30)
+XC_DIR = /usr/local/Cellar/libxc/5.1.5/
+# makefile (from `Makefile', line 38)
+FFT = fftw
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 2
+# makefile (from `Makefile', line 2)
+CC = gcc
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = alwhite
+# makefile (from `Makefile', line 108)
+OBJINT = $(OBJDIR)/$(INTDIR)/utils.o $(OBJDIR)/$(INTDIR)/$(FFT).o $(OBJDIR)/$(INTDIR)/xc_interface_$(xc).o $(OBJDIR)/$(INTDIR)/parallel_$(parallel).o $(OBJDIR)/$(INTDIR)/lapack.o $(OBJDIR)/$(INTDIR)/linalg.o $(OBJDIR)/$(INTDIR)/splines.o
+# makefile (from `Makefile', line 1)
+FC = gfortran
+# makefile
+.DEFAULT_GOAL := gnu
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from `Makefile', line 25)
+FFTW_DIR = /usr/local/Cellar/fftw/3.3.9_1/
+# makefile (from `Makefile', line 8)
+MODDIR = mod
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# makefile (from `Makefile', line 43)
+INC = -I$(MODDIR)/$(PAWDIR) -I$(MODDIR)/$(TYPDIR) -I$(MODDIR)/$(INTDIR) -I$(MODDIR)/$(SAODIR) -I$(MODDIR)/$(TASKDIR) -I$(MODDIR)/$(PHYSDIR) -I$(MODDIR)/$(CALCDIR) -I$(MODDIR)/$(MAINDIR) $(MPI_COMPILE_FLAGS) $(FFTW_COMPILE_FLAGS) $(XC_COMPILE_FLAGS) 
+# makefile (from `Makefile', line 151)
+OBJCALC = $(OBJDIR)/$(CALCDIR)/allocate_memory.o $(OBJDIR)/$(CALCDIR)/Orbital_Free_Min.o $(OBJDIR)/$(CALCDIR)/Update_Potentials_Energies.o $(OBJDIR)/$(CALCDIR)/initialization_finalization.o $(OBJDIR)/$(CALCDIR)/Eigen_LOBPCG.o $(OBJDIR)/$(CALCDIR)/Eigen_ChebFilter.o $(OBJDIR)/$(CALCDIR)/Eigen_RMM_DIIS.o $(OBJDIR)/$(CALCDIR)/Stress_Pressure.o $(OBJDIR)/$(CALCDIR)/SCF.o $(OBJDIR)/$(CALCDIR)/Stopping_Power.o $(OBJDIR)/$(CALCDIR)/Current.o $(OBJDIR)/$(CALCDIR)/Time_Dependent.o $(OBJDIR)/$(CALCDIR)/Kubo_Greenwood.o $(OBJDIR)/$(CALCDIR)/DensityofStates.o $(OBJDIR)/$(CALCDIR)/Simple_Tests.o
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/w8/jmw8jjr522s88jqxn43r0r08000tdf/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/alwhite/Library/Application Support/Code/1.70.1-main.sock
+# makefile (from `Makefile', line 12)
+TYPDIR = types
+# environment
+MallocNanoZone = 0
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from `Makefile', line 31)
+XC_COMPILE_FLAGS = -I$(XC_DIR)include -I$(XC_DIR)lib
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.75826814.75826820
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from `Makefile', line 53)
+ 
+make: *** No rule to make target `all'.  Stop.
+
+OBJPAW = $(OBJDIR)/$(PAWDIR)/libpaw_libxc.o $(OBJDIR)/$(PAWDIR)/m_libpaw_defs.o $(OBJDIR)/$(PAWDIR)/m_libpaw_mpi.o $(OBJDIR)/$(PAWDIR)/m_libpaw_tools.o $(OBJDIR)/$(PAWDIR)/m_libpaw_libxc.o $(OBJDIR)/$(PAWDIR)/m_paral_atom.o $(OBJDIR)/$(PAWDIR)/m_paw_numeric.o $(OBJDIR)/$(PAWDIR)/m_paw_sphharm.o $(OBJDIR)/$(PAWDIR)/m_paw_io.o $(OBJDIR)/$(PAWDIR)/m_pawang.o $(OBJDIR)/$(PAWDIR)/m_pawrad.o $(OBJDIR)/$(PAWDIR)/m_pawtab.o $(OBJDIR)/$(PAWDIR)/m_paw_an.o $(OBJDIR)/$(PAWDIR)/m_paw_ij.o $(OBJDIR)/$(PAWDIR)/m_pawfgrtab.o $(OBJDIR)/$(PAWDIR)/m_paw_finegrid.o $(OBJDIR)/$(PAWDIR)/m_pawcprj.o $(OBJDIR)/$(PAWDIR)/m_pawrhoij.o $(OBJDIR)/$(PAWDIR)/m_pawdij.o $(OBJDIR)/$(PAWDIR)/m_pawxc.o $(OBJDIR)/$(PAWDIR)/m_paw_atom.o $(OBJDIR)/$(PAWDIR)/m_paw_gaussfit.o $(OBJDIR)/$(PAWDIR)/m_pawxmlps.o $(OBJDIR)/$(PAWDIR)/m_pawpsp.o $(OBJDIR)/$(PAWDIR)/m_paw_init.o $(OBJDIR)/$(PAWDIR)/m_paw_occupancies.o $(OBJDIR)/$(PAWDIR)/m_paw_correlations.o $(OBJDIR)/$(PAWDIR)/m_paw_denpot.o $(OBJDIR)/$(PAWDIR)/m_paw_nhat.o $(OBJDIR)/$(PAWDIR)/m_paw_onsite.o
+# automatic
++F = $(notdir $+)
+# makefile (from `Makefile', line 11)
+SAODIR = system_and_options
+# environment
+__CF_USER_TEXT_ENCODING = 0x69AE:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# makefile (from `Makefile', line 27)
+FFTW_LINK_FLAGS = -L$(FFTW_DIR)lib -lfftw3_mpi -lfftw3 -lfftw3_threads -lm
+# automatic
+<F = $(notdir $<)
+# makefile (from `Makefile', line 6)
+OBJDIR = obj
+# makefile (from `Makefile', line 168)
+OBJMAIN = $(OBJDIR)/$(MAINDIR)/main.o 
+# environment
+LC_ALL = C
+# environment
+SECURITYSESSIONID = 186c3
+# automatic
+^F = $(notdir $^)
+# makefile (from `Makefile', line 13)
+INTDIR = interfaces
+# default
+SUFFIXES := 
+# makefile (from `Makefile', line 21)
+MPI_LINK_FLAGS = $(shell mpif90 --showme:link)
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 1463
+# makefile (from `Makefile', line 35)
+LA_DIR = /usr/local/Cellar/lapack/3.10.0/
+# variable set hash-table stats:
+# Load=103/1024=10%, Rehash=0, Collisions=52/460=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src/tasks (device 16777221, inode 9103447): No files, no impossibilities so far.
+# src/calculations (device 16777221, inode 9103305): No files, no impossibilities so far.
+# src/physics (device 16777221, inode 9103426): No files, no impossibilities so far.
+# . (device 16777221, inode 9103216): 27 files, no impossibilities.
+# src/libpaw (device 16777221, inode 9103328): No files, no impossibilities so far.
+# src/system_and_options (device 16777221, inode 9103443): No files, no impossibilities so far.
+# src/types (device 16777221, inode 9103456): No files, no impossibilities so far.
+# src/interfaces (device 16777221, inode 9103318): No files, no impossibilities so far.
+
+# 27 files, no impossibilities in 8 directories.
+
+# Implicit Rules
+
+obj/libpaw/%.o: src/libpaw/%.c
+#  commands to execute (from `Makefile', line 172):
+	$(CC) $(INC) $(CFLAG) -o $@ -c $< 
+	
+
+obj/libpaw/%.o: src/libpaw/%.F90
+#  commands to execute (from `Makefile', line 175):
+	$(FC) $(INC) $(FFLAG) -o $@ -c $<  $(MODCMD)$(MODDIR)/$(PAWDIR)/
+	
+
+obj/types/%.o: src/types/%.f90
+#  commands to execute (from `Makefile', line 179):
+	$(FC) $(INC)  $(FFLAG)  -o $@ -c $<  $(MODCMD)$(MODDIR)/$(TYPDIR)/
+	
+
+obj/interfaces/%.o: src/interfaces/%.f90
+#  commands to execute (from `Makefile', line 182):
+	$(FC) $(INC)  $(FFLAG) -o $@ -c $<  $(MODCMD)$(MODDIR)/$(INTDIR)/
+	
+
+obj/system_and_options/%.o: src/system_and_options/%.f90
+#  commands to execute (from `Makefile', line 185):
+	$(FC) $(INC)  $(FFLAG) -o $@ -c $<  $(MODCMD)$(MODDIR)/$(SAODIR)/
+	
+
+obj/tasks/%.o: src/tasks/%.f90
+#  commands to execute (from `Makefile', line 188):
+	$(FC) $(INC)  $(FFLAG) -o $@ -c $<  $(MODCMD)$(MODDIR)/$(TASKDIR)/
+	
+
+obj/physics/%.o: src/physics/%.f90
+#  commands to execute (from `Makefile', line 191):
+	$(FC) $(INC)  $(FFLAG) -o $@ -c $<  $(MODCMD)$(MODDIR)/$(PHYSDIR)/
+	
+
+obj/calculations/%.o: src/calculations/%.f90
+#  commands to execute (from `Makefile', line 194):
+	$(FC) $(INC)  $(FFLAG) -o $@ -c $<  $(MODCMD)$(MODDIR)/$(CALCDIR)/
+	
+
+obj/main/%.o: src/main/main.f90
+#  commands to execute (from `Makefile', line 197):
+	$(FC) $(INC)  $(FFLAG) -o $@ -c $< 
+	
+
+# 9 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+obj/libpaw/m_paral_atom.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_an.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/tasks/field_gradient.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/numerics.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/odp_type_fftw.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/interfaces/lapack.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Stochastic.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_pawrad.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+performance_ic: main.exe
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# makefile (from `Makefile', line 248)
+# LINALG = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_sequential.a -Wl,--end-group -lpthread -lm -ldl
+# makefile (from `Makefile', line 247)
+# MODOPT = -module 
+# makefile (from `Makefile', line 245)
+# FC = ifort
+# makefile (from `Makefile', line 246)
+# CC = icc
+# makefile (from `Makefile', line 250)
+# CFLAG = -O3 -g -I${MKLROOT}/include -DMKL_LP64
+# makefile (from `Makefile', line 249)
+# FFLAG = -O3 -g -I${MKLROOT}/include
+# variable set hash-table stats:
+# Load=6/32=19%, Rehash=0, Collisions=2/6=33%
+
+# Not a target:
+obj/libpaw/m_paw_nhat.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Simple_Tests.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/tasks/read_in.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/XC.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/tasks/Spherical_Harmonics.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/system_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/libpaw_libxc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/interfaces/parallel_mpi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Update_Potentials_Energies.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+obj/types/parallel_type_mpi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/DOS_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
+
+# Not a target:
+obj/types/stochastic_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/interfaces/fftw.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/KG_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Non_Local_Ion.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Apply_Hamiltonian.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Local_Ion.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Non_Local_Ion_EnFoSt.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/tasks/FFT2Matrix.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+gnu_debug: main.exe
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# makefile (from `Makefile', line 218)
+# LDFLAGS = $(FFLAG)
+# makefile (from `Makefile', line 220)
+# MODCMD = -J
+# makefile (from `Makefile', line 215)
+# FC = gfortran
+# makefile (from `Makefile', line 216)
+# CC = /usr/bin/gcc
+# makefile (from `Makefile', line 219)
+# CFLAG = -g
+# makefile (from `Makefile', line 217)
+# FFLAG = -Wall -Wextra -Wimplicit-interface -fPIC -fmax-errors=1 -g -fcheck=all -fbacktrace -ffpe-trap=invalid,zero,overflow 
+# variable set hash-table stats:
+# Load=6/32=19%, Rehash=0, Collisions=1/6=17%
+
+# Not a target:
+obj/tasks/operations_3D.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/system_and_options/inputs.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_pawrhoij.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+main.exe: obj/libpaw/libpaw_libxc.o obj/libpaw/m_libpaw_defs.o obj/libpaw/m_libpaw_mpi.o obj/libpaw/m_libpaw_tools.o obj/libpaw/m_libpaw_libxc.o obj/libpaw/m_paral_atom.o obj/libpaw/m_paw_numeric.o obj/libpaw/m_paw_sphharm.o obj/libpaw/m_paw_io.o obj/libpaw/m_pawang.o obj/libpaw/m_pawrad.o obj/libpaw/m_pawtab.o obj/libpaw/m_paw_an.o obj/libpaw/m_paw_ij.o obj/libpaw/m_pawfgrtab.o obj/libpaw/m_paw_finegrid.o obj/libpaw/m_pawcprj.o obj/libpaw/m_pawrhoij.o obj/libpaw/m_pawdij.o obj/libpaw/m_pawxc.o obj/libpaw/m_paw_atom.o obj/libpaw/m_paw_gaussfit.o obj/libpaw/m_pawxmlps.o obj/libpaw/m_pawpsp.o obj/libpaw/m_paw_init.o obj/libpaw/m_paw_occupancies.o obj/libpaw/m_paw_correlations.o obj/libpaw/m_paw_denpot.o obj/libpaw/m_paw_nhat.o obj/libpaw/m_paw_onsite.o obj/types/types.o obj/types/parallel_type_mpi.o obj/types/shared_type.o obj/types/constants.o obj/types/numerics.o obj/types/odp_type_fftw.o obj/types/element_type.o obj/types/atom_type.o obj/types/grids_type_fftw.o obj/types/system_type.o obj/types/xc_type_libxc.o obj/types/tf_type.o obj/types/td_type.o obj/types/ewald_type.o obj/types/KG_type.o obj/types/DOS_type.o obj/types/tasks_type.o obj/types/stochastic_type.o obj/types/stopping_type.o obj/types/simulation_type.o obj/interfaces/utils.o obj/interfaces/fftw.o obj/interfaces/xc_interface_libxc.o obj/interfaces/parallel_mpi.o obj/interfaces/lapack.o obj/interfaces/linalg.o obj/interfaces/splines.o obj/system_and_options/inputs.o obj/system_and_options/grids_fftw.o obj/system_and_options/odp_fftw.o obj/tasks/operations_3D.o obj/tasks/Spherical_Harmonics.o obj/tasks/field_gradient.o obj/tasks/distribute_field.o obj/tasks/FFT2Matrix.o obj/tasks/Fourier.o obj/tasks/read_in.o obj/physics/Ewald.o obj/physics/Hartree.o obj/physics/Kinetic.o obj/physics/External_Field.o obj/physics/XC.o obj/physics/Density.o obj/physics/HGH_Pseudopotentials.o obj/physics/PAW_Pseudopotentials.o obj/physics/Local_Ion.o obj/physics/Non_Local_Ion.o obj/physics/Apply_Hamiltonian.o obj/physics/Non_Local_Ion_EnFoSt.o obj/physics/Chebychev.o obj/physics/Stochastic.o obj/physics/Thermostat.o obj/physics/Thomas_Fermi.o obj/physics/Entropy.o obj/physics/Chemical_Potential.o obj/calculations/allocate_memory.o obj/calculations/Orbital_Free_Min.o obj/calculations/Update_Potentials_Energies.o obj/calculations/initialization_finalization.o obj/calculations/Eigen_LOBPCG.o obj/calculations/Eigen_ChebFilter.o obj/calculations/Eigen_RMM_DIIS.o obj/calculations/Stress_Pressure.o obj/calculations/SCF.o obj/calculations/Stopping_Power.o obj/calculations/Current.o obj/calculations/Time_Dependent.o obj/calculations/Kubo_Greenwood.o obj/calculations/DensityofStates.o obj/calculations/Simple_Tests.o obj/main/main.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 254):
+	$(FC) $(LDFLAGS) $(INC) -o main.exe $(OBJPAW) $(OBJTYPE) $(OBJINT) $(OBJSAO) $(OBJTASK) $(OBJPHYS) $(OBJCALC) $(OBJMAIN) $(LINK)
+	#Copy module files into src directories for visual studios autodebugging
+	$(shell   cp $(MODDIR)/$(PAWDIR)/*.mod $(SRCDIR)/$(PAWDIR)/ )
+	$(shell   cp $(MODDIR)/$(TYPDIR)/*.mod $(SRCDIR)/$(TYPDIR)/ )
+	$(shell   cp $(MODDIR)/$(INTDIR)/*.mod $(SRCDIR)/$(INTDIR)/ )
+	$(shell   cp $(MODDIR)/$(SAODIR)/*.mod $(SRCDIR)/$(SAODIR)/ )
+	$(shell   cp $(MODDIR)/$(TASKDIR)/*.mod $(SRCDIR)/$(TASKDIR)/ )
+	$(shell   cp $(MODDIR)/$(PHYSDIR)/*.mod $(SRCDIR)/$(PHYSDIR)/ )
+	$(shell   cp $(MODDIR)/$(CALCDIR)/*.mod $(SRCDIR)/$(CALCDIR)/ )
+	$(shell   cp $(MPI_INC_DIR)/mpi.mod $(SRCDIR)/$(INTDIR)/ )
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Stress_Pressure.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_sphharm.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Current.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_denpot.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-25 11:27:35
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+obj/libpaw/m_pawcprj.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_pawtab.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Eigen_LOBPCG.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/xc_type_libxc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_occupancies.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ 
+obj/libpaw/m_paw_io.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/td_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Stopping_Power.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/tasks_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_libpaw_mpi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Thomas_Fermi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/External_Field.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Entropy.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/atom_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Thermostat.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/interfaces/splines.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_onsite.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/interfaces/linalg.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/PAW_Pseudopotentials.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Density.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/system_and_options/grids_fftw.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_pawxc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_libpaw_libxc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_atom.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Time_Dependent.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+gnu_mkl: main.exe
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# makefile (from `Makefile', line 209)
+# LINALG = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_sequential.a -Wl,--end-group -lpthread -lm -ldl
+# makefile (from `Makefile', line 212)
+# MODCMD = -J
+# makefile (from `Makefile', line 207)
+# FC = gfortran
+# makefile (from `Makefile', line 208)
+# CC = /usr/bin/gcc
+# makefile (from `Makefile', line 211)
+# CFLAG = -O3 -I${MKLROOT}/include -DMKL_LP64
+# makefile (from `Makefile', line 210)
+# FFLAG = -O3 -I${MKLROOT}/include -mcmodel=medium
+# variable set hash-table stats:
+# Load=6/32=19%, Rehash=0, Collisions=1/6=17%
+
+# Not a target:
+obj/libpaw/m_paw_ij.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+gnu: main.exe
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# makefile (from `Makefile', line 203)
+# LDFLAGS = $(FFLAG)
+# makefile (from `Makefile', line 204)
+# MODCMD = -J
+# makefile (from `Makefile', line 199)
+# FC = gfortran 
+# makefile (from `Makefile', line 200)
+# CC = gcc
+# makefile (from `Makefile', line 202)
+# CFLAG = -O3
+# makefile (from `Makefile', line 201)
+# FFLAG = -O3 -mcmodel=medium -std=f2018
+# variable set hash-table stats:
+ 
+# Load=6/32=19%, Rehash=0, Collisions=1/6=17%
+
+# Not a target:
+obj/libpaw/m_pawxmlps.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_libpaw_tools.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_gaussfit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_correlations.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+debug_ic: main.exe
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# makefile (from `Makefile', line 240)
+# LINALG = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_sequential.a -Wl,--end-group -lpthread -lm -ldl
+# makefile (from `Makefile', line 239)
+# MODOPT = -module 
+# makefile (from `Makefile', line 237)
+# FC = ifort
+# makefile (from `Makefile', line 238)
+# CC = icc
+# makefile (from `Makefile', line 242)
+# CFLAG = -g -I${MKLROOT}/include -DMKL_LP64
+# makefile (from `Makefile', line 241)
+# FFLAG = -g -I${MKLROOT}/include
+# variable set hash-table stats:
+# Load=6/32=19%, Rehash=0, Collisions=2/6=33%
+
+# Not a target:
+obj/types/shared_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/initialization_finalization.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/tasks/Fourier.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/system_and_options/odp_fftw.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Ewald.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Chebychev.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/HGH_Pseudopotentials.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/constants.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/DensityofStates.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Orbital_Free_Min.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 267):
+	rm -rf $(OBJDIR) $(MODDIR) $(LIBDIR) $(SRCDIR)/$(PAWDIR)/*.mod $(SRCDIR)/$(TYPDIR)/*.mod $(SRCDIR)/$(INTDIR)/*.mod $(SRCDIR)/$(SAODIR)/*.mod $(SRCDIR)/$(TASKDIR)/*.mod $(SRCDIR)/$(PHYSDIR)/*.mod $(SRCDIR)/$(CALCDIR)/*.mod 
+	rm main.exe
+	
+
+# Not a target:
+obj/libpaw/m_pawdij.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/interfaces/xc_interface_libxc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/tasks/distribute_field.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/element_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/allocate_memory.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/tf_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Kubo_Greenwood.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/simulation_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/ewald_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_pawfgrtab.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_pawang.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/types.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/SCF.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Hartree.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Eigen_RMM_DIIS.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_finegrid.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Chemical_Potential.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/interfaces/utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_numeric.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/types/grids_type_fftw.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/calculations/Eigen_ChebFilter.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ic: main.exe
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# makefile (from `Makefile', line 226)
+# LDFLAGS = $(FFLAG)
+# makefile (from `Makefile', line 223)
+# FC = ifort
+# makefile (from `Makefile', line 224)
+# CC = icc
+# makefile (from `Makefile', line 225)
+# FFLAG = -O3 -mcmodel=medium
+# variable set hash-table stats:
+# Load=4/32=12%, Rehash=0, Collisions=0/4=0%
+
+# Not a target:
+obj/types/stopping_type.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ic_mkl: main.exe
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# makefile (from `Makefile', line 232)
+# LINALG = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_sequential.a -Wl,--end-group -lpthread -lm -ldl
+# makefile (from `Makefile', line 231)
+# MODOPT = -module 
+# makefile (from `Makefile', line 229)
+# FC = ifort
+# makefile (from `Makefile', line 230)
+# CC = icc
+# makefile (from `Makefile', line 234)
+# CFLAG = -O3 -I${MKLROOT}/include -DMKL_LP64
+# makefile (from `Makefile', line 233)
+# FFLAG = -O3 -I${MKLROOT}/include
+# variable set hash-table stats:
+# Load=6/32=19%, Rehash=0, Collisions=2/6=33%
+
+# Not a target:
+obj/libpaw/m_pawpsp.o:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_libpaw_defs.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/physics/Kinetic.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/main/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/libpaw/m_paw_init.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=114/1024=11%, Rehash=0, Collisions=18/281=6%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Thu Aug 25 19:24:11 2022
+
+ 

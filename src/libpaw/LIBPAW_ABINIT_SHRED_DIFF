@@ -1,0 +1,386 @@
+==========================================================================================
+Output from diff of the libpaw files in SHRED (>) and Abinit version 9.6.2 (<)
+Before this output we have applied
+IMPORTNANT: [ sed -i -- 's/xpaw_mpi/xmpi/g' * ] command to all the files from Abinit,
+This seems an incomplete process as xmpi wrapper changes to xpaw_mpi wrapper only for some of the files and not others
+
+These changes may need to be reapplied when updating Libpaw from Abinit github repo
+==========================================================================================
+
+diff ../src/abinit.src /Users/alwhite/master/shred/src/libpaw/abinit.src
+44c44,45
+<  "m_pawpsp.F90"
+---
+>  "m_pawpsp.F90",
+>  "m_paw_init.F90"
+
+==========================================================================================
+
+diff ../src/m_libpaw_tools.F90 /Users/alwhite/master/shred/src/libpaw/m_libpaw_tools.F90 
+
+>  public  :: libpaw_simple_assert ! Assert logical true, else print error to stdout and stop
+85a87,96
+> !Added function
+> subroutine libpaw_simple_assert(logical_in,message)
+>   logical, intent(in) :: logical_in
+>   character(len=*),intent(in) :: message
+>   
+>   if(.not.logical_in) print *, message
+>   stop
+> 
+> end subroutine
+> 
+    
+
+==========================================================================================
+
+diff ../src/libpaw.h /Users/alwhite/master/shred/src/libpaw/libpaw.h
+173c173
+149c149
+< #  define USE_MSG_HANDLING use m_libpaw_tools, only : wrtout => libpaw_wrtout, libpaw_msg_hndl
+---
+> #  define USE_MSG_HANDLING use m_libpaw_tools, only : wrtout => libpaw_wrtout, libpaw_msg_hndl, libpaw_simple_assert
+171a172,174
+> /* Error checks */
+> # define LIBPAW_CHECK(LOG,MSG) call libpaw_simple_assert(LOG,MSG)
+> 
+173c176
+< #  undef LIBPAW_HAVE_LIBXC
+---
+> #  define LIBPAW_HAVE_LIBXC
+184a188,192
+> /*MPI*/
+> # define HAVE_MPI
+> # define HAVE_MPI2
+> # undef HAVE_MPI1
+> 
+
+==========================================================================================
+
+diff ../src/m_libpaw_defs.F90 /Users/alwhite/master/shred/src/libpaw/m_libpaw_defs.F90
+30c30
+< 
+---
+>  complex(dpc), parameter :: j_dpc = (0._dp,1.0_dp)
+66c66
+<  integer, parameter :: strlen=2000000                   ! maximum length of input string
+---
+>  integer, parameter :: strlen=20000                     ! maximum length of input string
+
+==========================================================================================
+
+diff ../src/m_libpaw_libxc.F90 /Users/alwhite/master/shred/src/libpaw/m_libpaw_libxc.F90
+43c43
+<  use iso_c_binding
+---
+>  use, intrinsic :: iso_c_binding
+448c448
+<  character(len=100) :: msg
+---
+>  character(len=100) :: msg=''
+470a471,472
+>    else
+>     libpaw_libxc_check=.true.
+
+==========================================================================================
+
+diff ../src/m_libpaw_mpi.F90 /Users/alwhite/master/shred/src/libpaw/m_libpaw_mpi.F90 
+2652c2652
+<    n1=size(xval,dim=1) ; n1=size(xval,dim=2)
+---
+>    n1=size(xval,dim=1) ; n2=size(xval,dim=2)
+
+==========================================================================================
+
+diff ../src/m_paw_sphharm.F90 /Users/alwhite/master/shred/src/libpaw/m_paw_sphharm.F90
+160c160
+<    ylmc = -SQRT(three/(8._dp*pi))*sinth*CMPLX(cosphi,sinphi)
+---
+>    ylmc = -SQRT(three/(8._dp*pi))*sinth*CMPLX(cosphi,sinphi,dpc)
+170c170
+<    ylmc = -SQRT(15.d0/(8.d0*pi))*sinth*costh*cmplx(cosphi,sinphi)
+---
+>    ylmc = -SQRT(15.d0/(8.d0*pi))*sinth*costh*cmplx(cosphi,sinphi,dpc)
+172c172
+<    ylmc = SQRT(15.d0/(32.d0*pi))*(sinth)**2*CMPLX(costwophi,sintwophi)
+---
+>    ylmc = SQRT(15.d0/(32.d0*pi))*(sinth)**2*CMPLX(costwophi,sintwophi,dpc)
+182c182
+<    ylmc= -SQRT(21.d0/(64.d0*pi))*sinth*(5.d0*costh**2-one)*CMPLX(cosphi,sinphi)
+---
+>    ylmc= -SQRT(21.d0/(64.d0*pi))*sinth*(5.d0*costh**2-one)*CMPLX(cosphi,sinphi,dpc)
+184c184
+<    ylmc= SQRT(105.d0/(32.d0*pi))*sinth**2*costh*CMPLX(costwophi,sintwophi)
+---
+>    ylmc= SQRT(105.d0/(32.d0*pi))*sinth**2*costh*CMPLX(costwophi,sintwophi,dpc)
+186c186
+<    ylmc=-SQRT(35.d0/(64.d0*pi))*sinth**3*CMPLX(costhreephi,sinthreephi)
+---
+>    ylmc=-SQRT(35.d0/(64.d0*pi))*sinth**3*CMPLX(costhreephi,sinthreephi,dpc)
+207c207
+< &   ass_leg_pol(il,ABS(im),costh) * CMPLX(cosphi,sinphi)**ABS(im)
+---
+> &   ass_leg_pol(il,ABS(im),costh) * CMPLX(cosphi,sinphi,dpc)**ABS(im)
+215c215
+<     !write(std_out,*)"cosphi,sinphi,e^{imphi}",cosphi,sinphi,CMPLX(cosphi,sinphi)**ABS(im)
+---
+>     !write(std_out,*)"cosphi,sinphi,e^{imphi}",cosphi,sinphi,CMPLX(cosphi,sinphi,dpc)**ABS(im)
+319,320c319,320
+<      dth= -SQRT(3.d0/(8.d0*pi))*costh*CMPLX(cosphi,sinphi)
+<      dphi=-SQRT(3.d0/(8.d0*pi))*sinth*CMPLX(-sinphi,cosphi)
+---
+>      dth= -SQRT(3.d0/(8.d0*pi))*costh*CMPLX(cosphi,sinphi,dpc)
+>      dphi=-SQRT(3.d0/(8.d0*pi))*sinth*CMPLX(-sinphi,cosphi,dpc)
+328,329c328,329
+<      dth=  -SQRT(15.d0/(8.d0*pi))*(costh**2-sinth**2)*CMPLX(cosphi,sinphi)
+<      dphi= -SQRT(15.d0/(8.d0*pi))*costh*sinth*(0.d0,1.d0)*CMPLX(cosphi,sinphi)
+---
+>      dth=  -SQRT(15.d0/(8.d0*pi))*(costh**2-sinth**2)*CMPLX(cosphi,sinphi,dpc)
+>      dphi= -SQRT(15.d0/(8.d0*pi))*costh*sinth*(0.d0,1.d0)*CMPLX(cosphi,sinphi,dpc)
+331,332c331,332
+<      dth  = SQRT(15.d0/(32.d0*pi))*2.d0*costh*sinth*CMPLX(costwophi,sintwophi)
+<      dphi = SQRT(15.d0/(32.d0*pi))*sinth**2*(0.d0,2.d0)*CMPLX(costwophi,sintwophi)
+---
+>      dth  = SQRT(15.d0/(32.d0*pi))*2.d0*costh*sinth*CMPLX(costwophi,sintwophi,dpc)
+>      dphi = SQRT(15.d0/(32.d0*pi))*sinth**2*(0.d0,2.d0)*CMPLX(costwophi,sintwophi,dpc)
+341,342c341,342
+<      dth= -c*      (15.d0*costh**3-11.d0*costh)*            CMPLX(cosphi,sinphi)
+<      dphi=-c*sinth*( 5.d0*costh**2-1          )*(0.d0,1.d0)*CMPLX(cosphi,sinphi)
+---
+>      dth= -c*      (15.d0*costh**3-11.d0*costh)*            CMPLX(cosphi,sinphi,dpc)
+>      dphi=-c*sinth*( 5.d0*costh**2-1          )*(0.d0,1.d0)*CMPLX(cosphi,sinphi,dpc)
+345,346c345,346
+<      dth =c*(2.d0*sinth*costh**2-sinth**3)   *CMPLX(costwophi,sintwophi)
+<      dphi=c*(2.d0*sinth**2*costh)*(0.d0,1.d0)*CMPLX(costwophi,sintwophi)
+---
+>      dth =c*(2.d0*sinth*costh**2-sinth**3)   *CMPLX(costwophi,sintwophi,dpc)
+>      dphi=c*(2.d0*sinth**2*costh)*(0.d0,1.d0)*CMPLX(costwophi,sintwophi,dpc)
+348,349c348,349
+<      dth =-SQRT(35.d0/(64.d0*pi))*3.d0*sinth**2*costh*CMPLX(costhreephi,sinthreephi)
+<      dphi=-SQRT(35.d0/(64.d0*pi))*sinth**3*(0.d0,3.d0)*CMPLX(costhreephi,sinthreephi)
+---
+>      dth =-SQRT(35.d0/(64.d0*pi))*3.d0*sinth**2*costh*CMPLX(costhreephi,sinthreephi,dpc)
+>      dphi=-SQRT(35.d0/(64.d0*pi))*sinth**3*(0.d0,3.d0)*CMPLX(costhreephi,sinthreephi,dpc)
+486,487c486,487
+<      ylm(nc)=sgn(m1)*cmplx(yr,-yi)
+<      ylm(nn)=cmplx(yr,yi)
+---
+>      ylm(nc)=sgn(m1)*cmplx(yr,-yi,dpc)
+>      ylm(nn)=cmplx(yr,yi,dpc)
+493c493
+<    ylm(nn)=cmplx(ya,0.d0)
+---
+>    ylm(nn)=cmplx(ya,0.d0,dpc)
+
+==========================================================================================
+
+diff ../src/m_pawang.F90 /Users/alwhite/master/shred/src/libpaw/m_pawang.F90
+556c556
+<      mat_ls_ylm(:,:,3)=-cmplx(0.d0,1.d0)*(mat_inp_c(:,:,4)-mat_inp_c(:,:,3))
+---
+>      mat_ls_ylm(:,:,3)=-cmplx(0.d0,1.d0,dpc)*(mat_inp_c(:,:,4)-mat_inp_c(:,:,3))
+
+==========================================================================================
+
+diff ../src/m_pawdij.F90 /Users/alwhite/master/shred/src/libpaw/m_pawdij.F90
+5565a5566
+>      n1=dimdij(ii,1); n2=dimdij(ii,2)
+
+==========================================================================================
+
+diff ../src/m_pawpsp.F90 /Users/alwhite/master/shred/src/libpaw/m_pawpsp.F90
+<    if (size(pawtab%vminushalf)>0.and.pawtab%has_vminushalf==1) then
+---
+>    if(pawtab%has_vminushalf==1) then; if (size(pawtab%vminushalf)>0) then
+3766c3766
+<    end if
+---
+>    end if; endif
+4832c4832
+< & wvl_ngauss,psxml,comm_mpi,xc_denpos)
+---
+> & wvl_ngauss,psxml,comm_mpi,xc_denpos, has_tproj_in)
+4838c4838
+<  integer,optional,intent(in) :: comm_mpi
+---
+>  integer,optional,intent(in) :: comm_mpi, has_tproj_in
+4888a4889
+>  if(present(has_tproj_in)) has_tproj=has_tproj_in 
+
+==========================================================================================
+==========================================================================================
+Output from diff of the additional Abinit files in SHRED libpaw (>) and Abinit version 9.2.2 (<)
+These are contained in abinit src/##_paw/ folder 
+Before this output we have applied
+IMPORTNANT: [ sed -i -- 's/ABI_/LIBPAW_/g' * ] command to all the files from Abinit,
+IMPORTNANT: THEN: [ sed -i -- 's/LIBPAW_FREE/LIBPAW_DEALLOCATE/g' * ] command to all the files from Abinit,
+IMPORTNANT: THEN: [ sed -i -- 's/LIBPAW_MALLOC/LIBPAW_ALLOCATE/g' * ] command to all the files from Abinit,
+This is part of their coding convention in LIBPAW
+
+These changes may need to be reapplied when updating Libpaw from Abinit github repo
+
+
+Header changes will be common as keeping with Abinit coding rules for libpaw 
+see : libpaw-coding-rules.txt
+
+abi_common.h --> libpaw.h (may need to add things to libpaw.h)
+use ... ---> USE_... defined in libpaw.h
+other common changes:
+removal of m_time routines (module not added to libpaw)
+removal of DGB_... commands
+
+==========================================================================================
+==========================================================================================
+
+
+==========================================================================================
+m_paw_init.F90
+Note: We only take the pawinit subroutine from m_paw_init.F90 into SHRED
+==========================================================================================
+
+==========================================================================================
+20c20
+< #include "abi_common.h"
+---
+> #include "libpaw.h"
+24,28c24,29
+<  use defs_basis
+<  use m_errors
+<  use m_abicore
+<  use m_splines
+<  use m_dtset
+---
+>   USE_DEFS
+>   USE_MSG_HANDLING
+>   USE_MPI_WRAPPERS
+>   USE_MEMORY_PROFILING
+> 
+>  use m_libpaw_defs
+30d30
+<  use m_time,    only : timab
+37c37
+<  use m_paw_numeric, only : paw_derfc
+---
+>  use m_paw_numeric, only : paw_spline, paw_derfc
+45d44
+<  public :: paw_gencond ! Test whether we have to call pawinit to regenerate tabulated data.
+195,198c194,196
+<  integer,allocatable :: indl(:,:),klm_diag(:),kmix_tmp(:)
+<  integer, LIBPAW_CONTIGUOUS pointer :: indlmn(:,:)
+<  real(dp) :: tsec(2)
+<  real(dp),allocatable :: der(:),ff(:),gg(:),hh(:),indklmn_(:,:),intvhatl(:)
+---
+>  integer,allocatable :: indl(:,:),klm_diag(:),kmix_tmp(:), indklmn_(:,:)
+>  integer, contiguous, pointer :: indlmn(:,:)
+>  real(dp),allocatable :: der(:),ff(:),gg(:),hh(:),intvhatl(:)
+204,207d201
+<  DBG_ENTER("COLL")
+< 
+<  call timab(553,1,tsec)
+< 
+300c294
+<        call spline(rad,pawtab(itypat)%shapefunc(:,il),mesh_size,yp1,ypn,pawtab(itypat)%dshpfunc(:,il,2))
+---
+>        call paw_spline(rad,pawtab(itypat)%shapefunc(:,il),mesh_size,yp1,ypn,pawtab(itypat)%dshpfunc(:,il,2))
+302c296
+<        call spline(rad,pawtab(itypat)%dshpfunc(:,il,1),mesh_size,yp1,ypn,pawtab(itypat)%dshpfunc(:,il,3))
+---
+>        call paw_spline(rad,pawtab(itypat)%dshpfunc(:,il,1),mesh_size,yp1,ypn,pawtab(itypat)%dshpfunc(:,il,3))
+304c298
+<        call spline(rad,pawtab(itypat)%dshpfunc(:,il,2),mesh_size,yp1,ypn,pawtab(itypat)%dshpfunc(:,il,4))
+---
+>        call paw_spline(rad,pawtab(itypat)%dshpfunc(:,il,2),mesh_size,yp1,ypn,pawtab(itypat)%dshpfunc(:,il,4))
+696,699d689
+<  call timab(553,2,tsec)
+< 
+<  DBG_EXIT("COLL")
+< 
+
+==========================================================================================
+m_paw_correlations.F90
+Note: We first remove setrhoijpbe0 subroutine from abinit  (65_paw) file 
+==========================================================================================
+diff ../65_paw/m_paw_correlations.F90 /Users/alwhite/master/shred/src/libpaw/m_paw_correlations.F90 
+==========================================================================================
+21c21
+< #include "abi_common.h"
+---
+> #include "libpaw.h"
+25,31c25,30
+<  use defs_basis
+<  use m_errors
+<  use m_abicore
+<  use m_xmpi
+<  use m_dtset
+<  use m_linalg_interfaces
+<  use m_special_funcs
+---
+>   USE_DEFS
+>   USE_MSG_HANDLING
+>   USE_MPI_WRAPPERS
+>   USE_MEMORY_PROFILING
+> 
+>   use m_libpaw_defs
+33d31
+<  use m_io_tools,    only : open_file
+52d49
+<  public :: setrhoijpbe0 ! Impose value of rhoij for using an auxiliairy file (PBE0 only)
+155,156d151
+<  DBG_ENTER("COLL")
+< 
+848,849d842
+<  DBG_EXIT("COLL")
+< 
+937,938d929
+<  DBG_ENTER("COLL")
+< 
+1203,1204d1193
+<  DBG_EXIT("COLL")
+< 
+1256,1257d1244
+<  DBG_ENTER("COLL")
+< 
+1313,1314d1299
+<  DBG_EXIT("COLL")
+< 
+1441,1442d1425
+<  DBG_ENTER("COLL")
+< 
+2230,2231d2212
+<  DBG_EXIT("COLL")
+< 
+2237,2590d2217
+
+==========================================================================================
+m_paw_denpot.F90
+This is easier described than shown with diff
+We remove all DBG references, all references to positron, as if ipositron=0 everywhere and remove 
+anything to contrary, then remove all reference to ipositron
+we remove the subroutine paw_mknewh0 and any reference to m_crystal from abinit
+
+also remove DBG and timab calls
+==========================================================================================
+diff ../65_paw/m_paw_denpot.F90 /Users/alwhite/master/shred/src/libpaw/m_paw_denpot.F90
+< #include "abi_common.h"
+---
+> #include "libpaw.h"
+24,28c24,29
+<  use defs_basis
+<  use m_abicore
+<  use m_errors
+<  use m_xmpi
+<  use m_time, only : timab
+---
+>   USE_DEFS
+>   USE_MSG_HANDLING
+>   USE_MPI_WRAPPERS
+>   USE_MEMORY_PROFILING
+> 
+>   use m_libpaw_defs
+
+2044c1875
+< real(dp), LIBPAW_CONTIGUOUS pointer :: dij_2D(:,:)
+---
+> real(dp), contiguous, pointer :: dij_2D(:,:)
+
+==========================================================================================
