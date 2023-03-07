@@ -58,9 +58,11 @@ or
     make gnu_debug
 
 for productive or debug builds. You can overwrite (for example if you use wget) the default paths with your own paths via:
+
     make FFTW_DIR= your path XC_DIR= your path LA_DIR= your path
 
 For the HPC example makefiles you need to set the paths either as above or by exporting
+
     export FFTW_DIR= your path 
     export XC_DIR= your path 
     export LA_DIR= your path
