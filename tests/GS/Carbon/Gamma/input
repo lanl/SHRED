@@ -1,0 +1,83 @@
+&task_list
+run_Time_Dependent=.false.
+calc_DOS=.true.
+run_Kubo_Greenwood=.false.
+run_Stopping_Power=.false.
+initial_orbital_free=.false.
+calculate_current=.true.
+/
+
+&parallel_groups
+n_spin_groups=1
+n_k_groups=1
+n_band_groups=4
+/
+
+&system_parameters
+Temperature_eV= 0.5
+Number_of_elements = 1
+Number_of_KS_orbitals = 36
+Number_of_stoch_vect =0
+Number_of_buffer_orbitals = 0
+Number_of_smoother_orbitals = 0
+/
+
+
+&simulation_grid
+Length_angst=3.57371 3.57371 3.57371
+Ecut=816.33
+Ecut_fine = 2721.1
+/
+
+&xc_functional
+exchange='GGA_X_PBE'
+correlation='GGA_C_PBE'
+/
+`
+&thomas_fermi
+gamma=1.0
+lambda=1.0
+energy_eps=1.0E-6
+max_iter=8000
+dynamic_kedp=.true.
+update_type=2
+/
+
+&element_list
+Number_of_atoms_of_element = 8
+PP_file = 'C.GGA_PBE-JTH.xml'
+PP_type ='PAW'
+Projector_Application = 'Real_local'
+radius=1.5
+Mass_amu = 12.00 
+OH_factor= 3
+/
+
+&positions
+   0.2500000000000000    0.7500000000000000    0.2500000000000000 
+   0.0000000000000000    0.0000000000000000    0.5000000000000000 
+   0.2500000000000000    0.2500000000000000    0.7500000000000000 
+   0.0000000000000000    0.5000000000000000    0.0000000000000000
+   0.7500000000000000    0.7500000000000000    0.7500000000000000 
+   0.5000000000000000    0.0000000000000000    0.0000000000000000 
+   0.7500000000000000    0.2500000000000000    0.2500000000000000 
+   0.5000000000000000    0.5000000000000000    0.5000000000000000 
+/
+
+&FFT
+FFT_algorithm = 'FFTW'
+/
+
+
+&numerics
+lobpcg_inner_steps=6
+lobpcg_soft_lock_thresh=1.0E-12
+n_scf_delay=2
+pulay_max_iter=1000
+pulay_n=6
+pulay_k=3
+pulay_L2_eps=1.0E-6
+pulay_eig_eps=1.0E-5
+/
+
+

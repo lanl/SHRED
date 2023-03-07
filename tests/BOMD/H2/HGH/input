@@ -1,0 +1,86 @@
+&task_list
+run_Time_Dependent=.true.
+run_Kubo_Greenwood=.false.
+calc_DOS=.false.
+run_Stopping_Power=.false.
+initial_orbital_free=.false.
+calculate_current=.false.
+/
+
+&parallel_groups
+n_spin_groups=1
+n_k_groups=1
+n_band_groups=1
+/
+
+&system_parameters
+Temperature_eV= 0.02
+Number_of_elements = 1
+Number_of_KS_orbitals = 6
+Number_of_stoch_vect = 0
+Number_of_buffer_orbitals = 0
+Number_of_smoother_orbitals = 0
+/
+
+&xc_functional
+exchange='GGA_X_PBE'
+correlation='GGA_C_PBE'
+/
+
+
+&Density_of_States
+delta_eV=2.0
+omega_max_eV=120.0
+dw_eV=0.1
+/
+
+&simulation_grid
+Length_Angst = 4 4 4
+Ecut=2000 !eV
+/
+
+&element_list
+Number_of_atoms_of_element = 2 
+PP_file= '1h.1.hgh'
+PP_type ='HGH'
+Projector_Application = 'Real_local'
+Mass_amu = 1.007 
+thawed_positions=.true.
+thawed_velocities=.true.
+/
+
+&positions
+0.0 0.0 0.0
+0.0 0.0 0.3
+/
+
+&velocities
+0.00 0.00 0.00
+0.00 0.00 0.00
+/
+
+&FFT
+FFT_algorithm = 'FFTW'
+/
+
+
+&numerics
+lobpcg_inner_steps=6
+lobpcg_soft_lock_thresh=1.0E-12
+pulay_max_iter=1000
+pulay_n=6
+pulay_k=3
+pulay_L2_eps=1.0E-5
+pulay_eig_eps=1.0E-6
+n_scf_delay=2
+/
+
+&Time_Dependent
+dt = 10
+nt = 200
+BOMD_or_RealTime = 'BOMD'
+Thermostat='IsoEnergy'
+energy_print_mod=2
+pressure_print_mod=5
+/
+
