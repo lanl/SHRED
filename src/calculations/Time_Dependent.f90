@@ -712,7 +712,7 @@ module Time_Dependent
                     do m=1,size(a)
                         c_m(m)=0.0_dp
                         do n=1,size(a)
-                            c_m(m)= c_m(m) + U(1,n)*exp(-i_*dt_check*a(n))*U(m,n)
+                            c_m(m)= c_m(m) + U(1,n)*exp(-i_*dt_check*a_tmp(n))*U(m,n)
                         enddo
                     enddo
                 enddo
