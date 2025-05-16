@@ -12,6 +12,9 @@ nonexclusive, paid-up, irrevocable worldwide license in this material to reprodu
 derivative works, distribute copies to the public, perform publicly and display publicly, and to permit
 others to do so.
 
+# Is this project active?
+You may notice that this version of SHRED appears inactive. Note that this version of SHRED constitutes a stable release and is meant primarily for standard use cases and is updated infrequently (next updated expected late 2025). An active development version, maintained by the LANL team, lives a private repository. Friendly users interested in access to latest capabilities and collaboraton should contact Alexander J. White at alwhite@lanl.gov to discuss access. 
+
 # What is SHRED for?
 
 SHRED is a plane-wave DFT code similar to ABINIT, VASP and Quantum Espresso. It utilizes mostly the same conventions as ABINIT and has been tested against ABINIT whenever possible. While VASP and ABINIT were originally designed to target condensed phase solids (elegantly using symmetry to simplify computation), SHRED is designed to tackle numerically difficult problems for large-scale disordered systems and/or high-temperature (dense plasmas) calculations. In addition to standard deterministic finite temperature Kohn-Sham DFT within the Mermin approximation, SHRED can perform stochastic and mixed-stochastic deterministic calculations. Stochastic DFT is a linear scaling in system size and inverse scaling in temperature approach to solving for the finite-temperature electron density within the Kohn-Sahm formalism. Deterministic KS calcualtions scale cubically with system size and temperature, albiet with a much lower prefactor. Mixed DFT combines both approaches to improve precision and/or reduce computational costs.  SHRED can also perform DFT calcualtions utilizing Orbital-Free (OF) DFT with Thomas-Fermi Perrot or Thomas-Fermi Perrot Von Weizsacker Kinetic Free-Energy (TFvW) functionals.
